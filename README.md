@@ -1,68 +1,189 @@
-# CodeIgniter 4 Application Starter
+# Task Management System
 
-## What is CodeIgniter?
+[![Backend PHP](https://img.shields.io/badge/backend-php-%23777BB4?logo=php&logoColor=white)](https://www.php.net/) [![Framework CodeIgniter](https://img.shields.io/badge/framework-codeigniter-%23EF4223?logo=codeigniter&logoColor=white)](https://codeigniter.com/) [![Frontend JavaScript](https://img.shields.io/badge/frontend-javascript-%23F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript) [![Database MySQL](https://img.shields.io/badge/database-mysql-%234479A1?logo=mysql&logoColor=white)](https://www.mysql.com/) [![Styling Tailwind CSS](https://img.shields.io/badge/styling-tailwind%20css-%2338B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/) [![UI jQuery](https://img.shields.io/badge/ui-jquery-%230769AD?logo=jquery&logoColor=white)](https://jquery.com/) [![Icons Font Awesome](https://img.shields.io/badge/icons-font%20awesome-%23528DD7?logo=font-awesome&logoColor=white)](https://fontawesome.com/) [![Session PHP Session](https://img.shields.io/badge/session-php%20session-%23777BB4?logo=php&logoColor=white)](https://www.php.net/manual/en/book.session.php) [![License MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+A modern task management system built with CodeIgniter 4 and Tailwind CSS. Features user authentication, category-based task organization, real-time updates, and responsive design.
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+## Prerequisites
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+Before you begin, ensure you have the following installed:
+- PHP >= 8.1
+- MySQL >= 5.7
+- Composer
+- Git
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+## Installation Steps
 
-## Installation & updates
+1. **Clone the repository**
+```bash
+git clone https://github.com/yourusername/task-management-system.git
+cd task-management-system
+```
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+2. **Install dependencies**
+```bash
+composer install
+```
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+3. **Configure environment**
+```bash
+# Copy the example env file
+cp .env.example .env
 
-## Setup
+# Generate application key (if needed)
+php spark key:generate
+```
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+4. **Configure database**
+Edit `.env` file and update database settings:
+```env
+database.default.hostname = localhost
+database.default.database = your_database_name
+database.default.username = your_username
+database.default.password = your_password
+database.default.DBDriver = MySQLi
+database.default.port = 3306
+```
 
-## Important Change with index.php
+5. **Run migrations**
+```bash
+# Create database tables
+php spark migrate
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+# Seed default categories
+php spark db:seed DefaultCategories
+```
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+6. **Set permissions** (Linux/Unix)
+```bash
+chmod -R 777 writable/
+```
 
-**Please** read the user guide for a better explanation of how CI4 works!
+7. **Start development server**
+```bash
+php spark serve
+```
 
-## Repository Management
+The application will be available at `http://localhost:8080`
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+## Test Account
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+Use these credentials to test the application:
+```
+Email: test@example.com
+Username: TestUser
+Password: password123
+```
 
-## Server Requirements
+## Features
 
-PHP version 8.1 or higher is required, with the following extensions installed:
+- User Authentication
+  - Register with email and password
+  - Login with email/username
+  - Secure session management
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+- Task Management
+  - Create, edit, and delete tasks
+  - Organize tasks by categories
+  - Set task deadlines
+  - Move tasks between states (Pending/In Progress/Completed)
 
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> - The end of life date for PHP 8.1 will be December 31, 2025.
+- Categories
+  - Create custom categories
+  - Edit and delete categories
+  - Color-coded category system
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+- Search and Filter
+  - Search tasks by title/description
+  - Filter by status
+  - Filter by category
+  - Combined filters support
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+## Database Structure
+
+The system uses three main tables:
+
+1. **users**
+   - Store user credentials and information
+   - Handles authentication
+
+2. **tasks**
+   - Store task details
+   - Fields: title, description, category, deadline, status, user_id
+
+3. **categories**
+   - Store task categories
+   - Fields: name, color_class, user_id
+
+## Development
+
+### File Structure
+```
+task-management-system/
+├── app/
+│   ├── Controllers/
+│   ├── Models/
+│   ├── Views/
+│   ├── Filters/
+│   └── Database/
+├── public/
+│   ├── assets/
+│   └── js/
+└── writable/
+```
+
+### Key Files
+- `app/Config/Routes.php` - Application routes
+- `app/Controllers/` - Application controllers
+- `app/Models/` - Database models
+- `app/Views/` - View templates
+- `app/Database/Migrations/` - Database migrations
+
+## Troubleshooting
+
+1. **Permission Issues**
+```bash
+chmod -R 777 writable/
+```
+
+2. **Database Connection**
+- Verify database credentials in `.env`
+- Ensure MySQL service is running
+
+3. **Composer Issues**
+```bash
+composer clear-cache
+composer update
+```
+
+## Security
+
+- CSRF protection enabled
+- Secure session management
+- Password hashing
+- XSS protection
+- Input validation
+
+## Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+- Mobile browsers
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+---
+
+For additional help or questions, please open an issue in the repository.

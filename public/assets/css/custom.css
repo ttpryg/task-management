@@ -1,0 +1,862 @@
+/* Mobile Optimizations */
+@media (max-width: 640px) {
+    /* Base mobile styles */
+    .task-list {
+        padding: 1rem;
+    }
+
+    .task-card {
+        padding: 1rem;
+    }
+
+    /* Categories page mobile optimizations */
+    .max-w-7xl.mx-auto .flex.justify-between.items-center.mb-6 {
+        gap: 0.75rem !important;
+        padding: 0 0.5rem !important;
+    }
+
+    .max-w-7xl.mx-auto .flex.justify-between.items-center.mb-6 h1 {
+        font-size: 1.5rem !important;
+    }
+
+    .max-w-7xl.mx-auto .flex.justify-between.items-center.mb-6 button {
+        padding: 0.5rem 0.75rem !important;
+        font-size: 0.875rem !important;
+    }
+
+    .max-w-7xl.mx-auto .flex.justify-between.items-center.mb-6 button i {
+        font-size: 0.875rem !important;
+        margin-right: 0.375rem !important;
+    }
+
+    /* Search input and filter select containers */
+    .search-container,
+    .filter-controls .relative {
+        position: relative !important;
+        width: 100% !important;
+        margin-bottom: 0.75rem !important;
+    }
+
+    /* Input and select styling */
+    .search-container input,
+    .filter-controls select {
+        width: 100% !important;
+        height: 42px !important;
+        padding: 0.5rem !important;
+        padding-left: 2.75rem !important;
+        padding-right: 2.5rem !important;
+        font-size: 0.875rem !important;
+        line-height: 1.25rem !important;
+    }
+
+    /* Icon positioning in inputs and selects */
+    .search-container::before,
+    .filter-controls .absolute i.fas {
+        position: absolute !important;
+        left: 0.875rem !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        font-size: 0.875rem !important;
+        color: #6b7280 !important;
+        pointer-events: none !important;
+    }
+
+    /* Dropdown arrow positioning */
+    .filter-controls .absolute.inset-y-0.right-0 {
+        right: 0.5rem !important;
+    }
+
+    /* Clear button positioning */
+    #clearSearch {
+        position: absolute !important;
+        right: 0.75rem !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+    }
+
+    /* Filter controls layout */
+    .filter-controls {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0.75rem !important;
+        width: 100% !important;
+    }
+
+    /* Status and Category filter containers */
+    div.flex-1.sm\:flex-initial.relative.min-w-\[200px\] {
+        width: 100% !important;
+        min-width: 0 !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    /* Clear filters button */
+    button#clearFilters {
+        width: 100% !important;
+        height: 42px !important;
+        margin: 0 !important;
+        padding: 0.5rem 1rem !important;
+        font-size: 0.875rem !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    /* Main filter container spacing */
+    div.mb-6.bg-white.p-4.sm\:p-6.rounded-xl.shadow-sm.border.border-gray-100 {
+        padding: 0.75rem !important;
+    }
+
+    /* Filter wrapper spacing */
+    div.flex.flex-col.gap-4.sm\:flex-row.sm\:gap-6 {
+        gap: 0.75rem !important;
+    }
+
+    /* Adjust icon and text alignment */
+    .absolute.inset-y-0 {
+        height: 100% !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+
+    .category-pill {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.5rem;
+    }
+
+    .task-actions {
+        gap: 0.5rem;
+    }
+
+    .task-actions button {
+        padding: 0.5rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    h3 {
+        font-size: 1.125rem;
+    }
+
+    body {
+        font-size: 0.875rem;
+    }
+}
+
+/* Additional small screen optimizations */
+@media (max-width: 425px) {
+    .search-container input,
+    .filter-controls select {
+        font-size: 0.813rem !important;
+        padding-left: 2.5rem !important;
+        padding-right: 2rem !important;
+    }
+
+    .search-container::before,
+    .filter-controls .absolute i.fas {
+        left: 0.75rem !important;
+        font-size: 0.813rem !important;
+    }
+
+    div.mb-6.bg-white.p-4.sm\:p-6.rounded-xl.shadow-sm.border.border-gray-100 {
+        padding: 0.625rem !important;
+    }
+}
+
+/* Extremely small screen optimizations */
+@media (max-width: 320px) {
+    .search-container input,
+    .filter-controls select {
+        font-size: 0.75rem !important;
+        padding-left: 2.25rem !important;
+        padding-right: 1.75rem !important;
+        height: 38px !important;
+    }
+
+    .search-container::before,
+    .filter-controls .absolute i.fas {
+        left: 0.625rem !important;
+        font-size: 0.75rem !important;
+    }
+
+    button#clearFilters {
+        height: 38px !important;
+        font-size: 0.75rem !important;
+        padding: 0.375rem 0.75rem !important;
+    }
+
+    div.mb-6.bg-white.p-4.sm\:p-6.rounded-xl.shadow-sm.border.border-gray-100 {
+        padding: 0.5rem !important;
+    }
+
+    div.flex.flex-col.gap-4.sm\:flex-row.sm\:gap-6 {
+        gap: 0.5rem !important;
+    }
+}
+
+/* Tablet Specific Styles */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    /* Main filter container */
+    div.mb-6.bg-white.p-4.sm\:p-6.rounded-xl.shadow-sm.border.border-gray-100 {
+        padding: 1rem !important;
+    }
+
+    /* Search and filters container */
+    div.mb-6.bg-white div.flex.flex-col.gap-4.sm\:flex-row.sm\:gap-6 {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1rem !important;
+    }
+
+    /* Search input container */
+    div.mb-6.bg-white div.flex-1.relative {
+        width: 100% !important;
+        margin-bottom: 1rem !important;
+    }
+
+    /* Filter controls container */
+    div.mb-6.bg-white div.flex.flex-col.sm\:flex-row.gap-4.sm\:gap-6 {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        gap: 1rem !important;
+        width: 100% !important;
+    }
+
+    /* Status and Category filter containers */
+    div.mb-6.bg-white div.flex-1.sm\:flex-initial.relative.min-w-\[200px\] {
+        width: calc(50% - 0.5rem) !important;
+        min-width: 0 !important;
+    }
+
+    /* Clear filters button */
+    div.mb-6.bg-white button#clearFilters {
+        width: 100% !important;
+        margin-top: 0.5rem !important;
+        order: 3 !important;
+    }
+
+    /* Ensure proper input and select sizing */
+    div.mb-6.bg-white input#taskSearch,
+    div.mb-6.bg-white select#statusFilter,
+    div.mb-6.bg-white select#categoryFilter {
+        width: 100% !important;
+        height: 40px !important;
+    }
+
+    /* Override any conflicting Tailwind responsive classes */
+    div.mb-6.bg-white .sm\:flex-row {
+        flex-direction: column !important;
+    }
+
+    div.mb-6.bg-white .sm\:w-auto {
+        width: 100% !important;
+    }
+}
+
+/* Safe Area Insets */
+@supports (padding: max(0px)) {
+    .safe-bottom {
+        padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
+    }
+
+    .safe-left {
+        padding-left: max(1rem, env(safe-area-inset-left));
+    }
+
+    .safe-right {
+        padding-right: max(1rem, env(safe-area-inset-right));
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) {
+    button, a {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .task-card {
+        -webkit-touch-callout: none;
+    }
+}
+
+/* Improved Scrolling */
+.scrollable-content {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+}
+
+/* Loading States */
+.loading {
+    opacity: 0.7;
+    pointer-events: none;
+    transition: opacity 0.2s;
+}
+
+/* Responsive Grid */
+.responsive-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: 1rem;
+}
+
+/* Mobile Form Styles */
+@media (max-width: 640px) {
+    input, select, textarea {
+        font-size: 16px !important; /* Prevent zoom on iOS */
+    }
+
+    .form-group {
+        margin-bottom: 1rem;
+    }
+
+    .form-actions {
+        position: sticky;
+        bottom: 0;
+        background: var(--bg-primary);
+        padding: 1rem;
+        border-top: 1px solid var(--border-color);
+    }
+}
+
+/* iOS Viewport Height Fix */
+.min-h-screen {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+}
+
+html {
+    height: -webkit-fill-available;
+}
+
+/* Theme Toggle Button Position */
+.theme-toggle {
+    bottom: max(1.5rem, env(safe-area-inset-bottom));
+    right: max(1.5rem, env(safe-area-inset-right));
+}
+
+/* Modal Mobile Styles */
+@media (max-width: 768px) {
+    .modal-container {
+        margin: 0;
+        min-height: 100vh;
+        border-radius: 0;
+    }
+
+    .modal-content {
+        padding: 1rem;
+    }
+
+    .modal-actions {
+        position: sticky;
+        bottom: 0;
+        background: var(--bg-primary);
+        padding: 1rem;
+        border-top: 1px solid var(--border-color);
+    }
+}
+
+/* Improved Focus States for Accessibility */
+:focus-visible {
+    outline: 2px solid var(--input-focus);
+    outline-offset: 2px;
+}
+
+/* Prevent Text Size Adjustment */
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+/* Better Button Touch Targets */
+@media (max-width: 640px) {
+    button, 
+    [role="button"],
+    .clickable {
+        min-height: 44px;
+        min-width: 44px;
+    }
+}
+
+/* Improved Task Card Layout */
+.task-card {
+    position: relative;
+    overflow: hidden; /* Prevent content overflow */
+}
+
+/* Better spacing for action buttons */
+.task-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.5rem;
+}
+
+/* Ensure buttons have proper touch targets */
+.task-actions button {
+    min-width: 36px;
+    min-height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Prevent text overflow in task cards */
+.task-title, .task-description {
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Ensure proper spacing for filter buttons */
+.filter-buttons {
+    padding: 0.5rem;
+    gap: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Responsive container for task columns */
+.task-columns-container {
+    display: flex;
+    gap: 1rem;
+    padding: 0.5rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+@media (min-width: 641px) and (max-width: 1023px) {
+    .task-columns-container {
+        margin: 0 0.5rem;
+    }
+    
+    /* Adjust clear filter button spacing */
+    .clear-filter {
+        margin-right: 1rem;
+    }
+}
+
+/* Ensure proper spacing for category pills */
+.category-pill {
+    margin: 0.25rem !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    padding: 0.25rem 0.75rem !important;
+    border-radius: 9999px !important;
+    font-size: 0.875rem !important;
+    line-height: 1.25rem !important;
+}
+
+/* Filter Controls - Updated Global Styles */
+.search-filter-container {
+    background-color: white !important;
+    border-bottom: 1px solid #e5e7eb !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 10 !important;
+    width: 100% !important;
+    padding: 1rem !important;
+}
+
+.filter-controls {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 1rem !important;
+    align-items: center !important;
+    margin-bottom: 1rem !important;
+}
+
+.clear-filter,
+button#clearFilters {
+    display: inline-flex !important;
+    align-items: center !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: 0.375rem !important;
+    background-color: #f3f4f6 !important;
+    color: #4b5563 !important;
+    font-weight: 500 !important;
+    transition: all 0.2s !important;
+    border: 1px solid #e5e7eb !important;
+    margin: 0 1rem !important;
+    height: 40px !important;
+}
+
+.clear-filter:hover,
+button#clearFilters:hover {
+    background-color: #e5e7eb !important;
+}
+
+/* Additional global styles */
+.search-container::before {
+    content: '\f002' !important;
+    font-family: 'Font Awesome 6 Free' !important;
+    font-weight: 900 !important;
+    position: absolute !important;
+    left: 0.75rem !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    color: #6b7280 !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
+    font-size: 0.875rem !important;
+}
+
+.search-container {
+    position: relative !important;
+    width: 100% !important;
+}
+
+.filter-controls select,
+.search-container input {
+    background-color: white !important;
+    border: 1px solid #e5e7eb !important;
+    border-radius: 0.375rem !important;
+}
+
+/* Ensure proper input heights and spacing */
+input[type="text"],
+select {
+    height: 40px !important;
+}
+
+/* Prevent filter overflow */
+.flex-shrink-0.relative select {
+    width: 100% !important;
+    padding-right: 2rem !important;
+}
+
+/* Update existing mobile styles for better consistency */
+@media (max-width: 640px) {
+    .search-filter-container {
+        padding: 1rem !important;
+    }
+
+    .filter-controls {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0.75rem !important;
+    }
+
+    .flex-1.relative,
+    .flex-shrink-0.relative {
+        width: 100% !important;
+    }
+
+    .clear-filter,
+    button#clearFilters {
+        width: 100% !important;
+        margin: 0 !important;
+        justify-content: center !important;
+    }
+}
+
+/* Improve search input and select styling */
+.search-container input,
+.filter-controls select {
+    width: 100% !important;
+    height: 40px !important;
+    padding: 0.5rem 1rem !important;
+    padding-left: 2.5rem !important;
+    border-radius: 0.375rem !important;
+    border: 1px solid #e5e7eb !important;
+    background-color: #fff !important;
+    font-size: 0.875rem !important;
+}
+
+/* Improve dropdown arrows */
+select {
+    appearance: none !important;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e") !important;
+    background-position: right 0.5rem center !important;
+    background-repeat: no-repeat !important;
+    background-size: 1.5em 1.5em !important;
+}
+
+/* Global Layout and Container Styles */
+.max-w-7xl.mx-auto {
+    width: 100% !important;
+    max-width: 1280px !important;
+    margin: 0 auto !important;
+    padding: 1rem !important;
+}
+
+/* Large Screens (1280px and above) */
+@media (min-width: 1280px) {
+    .max-w-7xl.mx-auto {
+        padding: 2rem !important;
+    }
+
+    /* Task Grid Layout */
+    .grid.grid-cols-1.sm\:grid-cols-2.xl\:grid-cols-3.gap-4.md\:gap-6 {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 1.5rem !important;
+    }
+
+    /* Task Cards */
+    .task-card {
+        padding: 1.5rem !important;
+    }
+}
+
+/* Desktop Screens (1024px to 1279px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+    .max-w-7xl.mx-auto {
+        padding: 1.5rem !important;
+    }
+
+    /* Task Grid Layout */
+    .grid.grid-cols-1.sm\:grid-cols-2.xl\:grid-cols-3.gap-4.md\:gap-6 {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 1.25rem !important;
+    }
+}
+
+/* Tablet Landscape (768px to 1023px) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .max-w-7xl.mx-auto {
+        padding: 1.25rem !important;
+    }
+
+    /* Task Grid Layout */
+    .grid.grid-cols-1.sm\:grid-cols-2.xl\:grid-cols-3.gap-4.md\:gap-6 {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 1rem !important;
+    }
+
+    /* Header Section */
+    .flex.justify-between.items-center.mb-6 {
+        padding: 0 0.5rem !important;
+        margin-bottom: 1.25rem !important;
+    }
+
+    /* Filter Section */
+    .mb-6.bg-white.p-4.sm\:p-6.rounded-xl.shadow-sm.border.border-gray-100 {
+        padding: 1rem !important;
+        margin-bottom: 1.25rem !important;
+    }
+
+    /* Search and Filter Layout */
+    .flex.flex-col.gap-4.sm\:flex-row.sm\:gap-6 {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 1rem !important;
+    }
+
+    /* Search Container */
+    .flex-1.relative {
+        grid-column: span 2 !important;
+    }
+
+    /* Filter Controls */
+    .flex.flex-col.sm\:flex-row.gap-4.sm\:gap-6 {
+        grid-column: span 2 !important;
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 1rem !important;
+    }
+
+    /* Clear Filters Button */
+    button#clearFilters {
+        grid-column: span 2 !important;
+    }
+
+    /* Task Cards */
+    .task-card {
+        padding: 1.25rem !important;
+    }
+}
+
+/* Tablet Portrait and Large Mobile (641px to 767px) */
+@media screen and (min-width: 641px) and (max-width: 767px) {
+    .max-w-7xl.mx-auto {
+        padding: 1rem !important;
+    }
+
+    /* Task Grid Layout */
+    .grid.grid-cols-1.sm\:grid-cols-2.xl\:grid-cols-3.gap-4.md\:gap-6 {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 0.875rem !important;
+    }
+
+    /* Header Section */
+    .flex.justify-between.items-center.mb-6 {
+        flex-direction: column !important;
+        gap: 1rem !important;
+        align-items: stretch !important;
+        padding: 0 0.5rem !important;
+    }
+
+    .flex.justify-between.items-center.mb-6 h1 {
+        text-align: center !important;
+    }
+
+    .flex.justify-between.items-center.mb-6 button {
+        width: 100% !important;
+    }
+
+    /* Filter Section */
+    .mb-6.bg-white.p-4.sm\:p-6.rounded-xl.shadow-sm.border.border-gray-100 {
+        padding: 1rem !important;
+    }
+
+    /* Search and Filter Layout */
+    .flex.flex-col.gap-4.sm\:flex-row.sm\:gap-6 {
+        flex-direction: column !important;
+        gap: 0.875rem !important;
+    }
+
+    /* Task Cards */
+    .task-card {
+        padding: 1rem !important;
+    }
+}
+
+/* Mobile Screens (up to 640px) */
+@media (max-width: 640px) {
+    .max-w-7xl.mx-auto {
+        padding: 0.75rem !important;
+    }
+
+    /* Task Grid Layout */
+    .grid.grid-cols-1.sm\:grid-cols-2.xl\:grid-cols-3.gap-4.md\:gap-6 {
+        grid-template-columns: 1fr !important;
+        gap: 0.75rem !important;
+    }
+
+    /* Header Section */
+    .flex.justify-between.items-center.mb-6 {
+        flex-direction: column !important;
+        gap: 0.75rem !important;
+        align-items: stretch !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .flex.justify-between.items-center.mb-6 h1 {
+        font-size: 1.5rem !important;
+        text-align: center !important;
+    }
+
+    .flex.justify-between.items-center.mb-6 button {
+        width: 100% !important;
+        padding: 0.625rem 1rem !important;
+        font-size: 0.875rem !important;
+    }
+
+    /* Filter Section */
+    .mb-6.bg-white.p-4.sm\:p-6.rounded-xl.shadow-sm.border.border-gray-100 {
+        padding: 0.75rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    /* Search and Filter Layout */
+    .flex.flex-col.gap-4.sm\:flex-row.sm\:gap-6 {
+        flex-direction: column !important;
+        gap: 0.75rem !important;
+    }
+
+    /* Task Cards */
+    .task-card {
+        padding: 0.875rem !important;
+    }
+
+    /* Task Card Content */
+    .task-title {
+        font-size: 0.875rem !important;
+    }
+
+    .task-description {
+        font-size: 0.813rem !important;
+    }
+
+    /* Category and Status Pills */
+    .category-pill,
+    .status-pill {
+        font-size: 0.75rem !important;
+        padding: 0.25rem 0.5rem !important;
+    }
+
+    /* Action Buttons */
+    .task-actions button {
+        padding: 0.375rem !important;
+    }
+
+    /* Modal Adjustments */
+    .modal-container {
+        padding: 0.75rem !important;
+    }
+
+    .modal-content {
+        padding: 0.875rem !important;
+    }
+
+    /* Form Elements */
+    input, select, textarea {
+        font-size: 16px !important; /* Prevent zoom on iOS */
+        padding: 0.625rem !important;
+    }
+
+    .form-group {
+        margin-bottom: 0.875rem !important;
+    }
+}
+
+/* Small Mobile Screens (425px and below) */
+@media (max-width: 425px) {
+    .max-w-7xl.mx-auto {
+        padding: 0.625rem !important;
+    }
+
+    /* Header Section */
+    .flex.justify-between.items-center.mb-6 h1 {
+        font-size: 1.25rem !important;
+    }
+
+    /* Filter Section */
+    .mb-6.bg-white.p-4.sm\:p-6.rounded-xl.shadow-sm.border.border-gray-100 {
+        padding: 0.625rem !important;
+    }
+
+    /* Task Cards */
+    .task-card {
+        padding: 0.75rem !important;
+    }
+
+    /* Form Elements */
+    input, select, textarea {
+        padding: 0.5rem !important;
+    }
+}
+
+/* Extra Small Mobile Screens (320px and below) */
+@media (max-width: 320px) {
+    .max-w-7xl.mx-auto {
+        padding: 0.5rem !important;
+    }
+
+    /* Header Section */
+    .flex.justify-between.items-center.mb-6 h1 {
+        font-size: 1.125rem !important;
+    }
+
+    /* Filter Section */
+    .mb-6.bg-white.p-4.sm\:p-6.rounded-xl.shadow-sm.border.border-gray-100 {
+        padding: 0.5rem !important;
+    }
+
+    /* Task Cards */
+    .task-card {
+        padding: 0.625rem !important;
+    }
+
+    /* Task Card Content */
+    .task-title {
+        font-size: 0.813rem !important;
+    }
+
+    .task-description {
+        font-size: 0.75rem !important;
+    }
+} 
